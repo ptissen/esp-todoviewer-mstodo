@@ -23,4 +23,4 @@ tbd
 tbd
 
 ## License
-See license file
+See [license file](LICENSE)
