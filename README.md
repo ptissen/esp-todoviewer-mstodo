@@ -22,5 +22,10 @@ tbd
 
 tbd
 
+
+## Contribute
+Contributions are welcome of course!
+To share the results only the main branch is currently synced to the public Github repo but this might change in the future if people want to contribute.
+
 ## License
 See [license file](LICENSE)
