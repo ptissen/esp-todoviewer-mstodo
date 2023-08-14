@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        ".c.inc": ".c",
+        "system_error": "cpp"
+    }
+}
