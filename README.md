@@ -1,8 +1,6 @@
 # ESP-ToDoViewer-MSToDo
 
-<span style="color: red; font-size: 18px;">This application is under development and not yet suitable for personal use, but maybe you can get inspired or contribute to make this application fully functional.</span>
-
----
+>  **_NOTE:_**  This application is under development and not yet suitable for personal use, but maybe you can get inspired or contribute to make this application fully functional.
 
 ## Demo
 ![](doc/demo-1.jpg)
