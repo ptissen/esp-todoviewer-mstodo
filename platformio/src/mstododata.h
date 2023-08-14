@@ -31,7 +31,8 @@ typedef struct {
             char title[MSTODO_LIST_TODO_TITLE];
             char status[MSTODO_LIST_TOOD_STATUS];
         } todo[MSTODO_LIST_TODOS_MAX];
-        uint32_t todo_count;   
+        uint32_t todo_count;
+        uint32_t todo_count_done;
         uint32_t todo_count_available;
         char name[MSTODO_LIST_NAME];
         char id[MSTODO_LIST_ID];

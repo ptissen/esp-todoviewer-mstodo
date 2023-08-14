@@ -25,7 +25,7 @@
 
 #include "../lib/GxEPD2/GxEPD2_display_selection_new_style.h"
 
-#include "helper_fonts.h"
+#include "../gfx-bitmap-fonts/include/fonts.h"
 #include "helper_icons.h"
 #include "locale/locale_de.h"
 #include "logging.h"
@@ -110,7 +110,7 @@ void DisplayHandler::drawError(ERROR_t err) {
     display.firstPage();
     do {
         display.fillScreen(GxEPD_WHITE);
-        display.setFont(&FONT_32px);
+        display.setFont(&FONT_40px);
         drawText(DISP_WIDTH / 2, y_txt, str, ALIGN_CB);
 
         display.drawInvertedBitmap(DISP_WIDTH / 2 - 256 / 2, y_img,
@@ -210,8 +210,12 @@ void DisplayHandler::drawToDos(){
                 continue;
 
             y0 += 16;
-            drawText(x0 + 5 , y0, "- " + String(todo_data.lists[l].todo[t].title), ALIGN_LB);
 
+            char buf[MSTODO_LIST_TODO_TITLE + 4];
+            snprintf(buf, sizeof(buf), "- %s", todo_data.lists[l].todo[t].title);
+
+            drawText(x0 + 5 , y0, buf , ALIGN_LB);
+            logD.println(buf);
             if(y0 + 32 >= 400 && x0 >= 300){
                 return;
             }

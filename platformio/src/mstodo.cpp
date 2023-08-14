@@ -154,8 +154,13 @@ void MSToDo::getToDos() {
     {
         HTTPClient http;
         http.useHTTP10(true);
-        DynamicJsonDocument json(4000);
 
+
+        StaticJsonDocument<64> filter;
+        filter["value"][0]["title"] = true;
+        filter["value"][0]["status"] = true;
+
+        DynamicJsonDocument json(20000);
         try {
             String url = urlTasks + String(todo_data.lists[i].id) + "/tasks";
             http.begin(m_client, url);
@@ -171,7 +176,7 @@ void MSToDo::getToDos() {
             }
 
             DeserializationError error;
-            error = deserializeJson(json, http.getStream());
+            error = deserializeJson(json, http.getStream(), DeserializationOption::Filter(filter));
             if (error) {
                 logD.print("Error parsing JSON data: ");
                 logD.println(error.c_str());
